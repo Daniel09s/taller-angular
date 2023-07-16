@@ -1,0 +1,50 @@
+<h2 mat-dialog-title >Registro de Estudiante</h2>
+<mat-dialog-content>
+    <form [formGroup]="registroForm" (submit)="onSubmit()">
+        
+        <mat-form-field class="form-field-row">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" placeholder="Nombre">
+            <mat-error *ngIf="registroForm.controls['nombre'].errors?.['required']">La identificación es requerida</mat-error>
+            <mat-error *ngIf="registroForm.controls['nombre'].errors?.['minlength']">Debe tener al menos 6 caracteres</mat-error>
+            <mat-error *ngIf="registroForm.controls['nombre'].errors?.['pattern']">Solo se aceptan números</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field-row">
+            <mat-label>Descripción</mat-label>
+            <input matInput formControlName="descripcion" placeholder="Descripción">
+            <mat-error *ngIf="registroForm.controls['descripcion'].errors?.['required']">La identificación es requerida</mat-error>
+            <mat-error *ngIf="registroForm.controls['descripcion'].errors?.['minlength']">Debe tener al menos 6 caracteres</mat-error>
+            <mat-error *ngIf="registroForm.controls['descripcion'].errors?.['pattern']">Solo se aceptan números</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field-row">
+            <mat-label>Cupo</mat-label>
+            <input matInput formControlName="cupo" placeholder="Cupo">
+            <mat-error *ngIf="registroForm.controls['cupo'].errors?.['required']">La identificación es requerida</mat-error>
+            <mat-error *ngIf="registroForm.controls['cupo'].errors?.['minlength']">Debe tener al menos 6 caracteres</mat-error>
+            <mat-error *ngIf="registroForm.controls['cupo'].errors?.['pattern']">Solo se aceptan números</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field-row">
+            <mat-label>Horario</mat-label>
+            <input matInput formControlName="horario" placeholder="Horario">
+            <mat-error *ngIf="registroForm.controls['horario'].errors?.['required']">La identificación es requerida</mat-error>
+            <mat-error *ngIf="registroForm.controls['horario'].errors?.['minlength']">Debe tener al menos 6 caracteres</mat-error>
+            <mat-error *ngIf="registroForm.controls['horario'].errors?.['pattern']">Solo se aceptan números</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field-row">
+            <mat-label>Profesor</mat-label>
+            <input matInput formControlName="profesor" placeholder="Profesor">
+            <mat-error *ngIf="registroForm.controls['profesor'].errors?.['required']">La identificación es requerida</mat-error>
+            <mat-error *ngIf="registroForm.controls['profesor'].errors?.['minlength']">Debe tener al menos 6 caracteres</mat-error>
+            <mat-error *ngIf="registroForm.controls['profesor'].errors?.['pattern']">Solo se aceptan números</mat-error>
+        </mat-form-field>
+
+        <mat-dialog-actions>
+            <button mat-button mat-dialog-close>Close</button>
+            <button mat-raised-button color="primary" type="submit">Guardar</button>
+        </mat-dialog-actions>
+    </form>
+</mat-dialog-content>

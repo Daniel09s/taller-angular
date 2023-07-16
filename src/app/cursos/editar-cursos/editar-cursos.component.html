@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Editar Curso</h2>
+<form [formGroup]="editForm" (submit)="onSubmit()">
+    <mat-dialog-content>
+
+        <mat-form-field class="form-field-row">
+            <mat-label>Descripción</mat-label>
+            <input matInput formControlName="descripcion" placeholder="Descripción">
+            <mat-error *ngIf="editForm.controls['descripcion'].errors?.['required']">Campo requerido</mat-error>
+            <mat-error *ngIf="editForm.controls['descripcion'].errors?.['minlength']">Debe tener al menos 3 caracteres</mat-error>
+            <mat-error *ngIf="editForm.controls['descripcion'].errors?.['maxlength']">Debe tener menos de 30 caracteres</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field-row">
+            <mat-label>Cupo</mat-label>
+            <input matInput formControlName="cupo" placeholder="Cupo">
+            <mat-error *ngIf="editForm.controls['cupo'].errors?.['required']">Campo requerido</mat-error>
+            <mat-error *ngIf="editForm.controls['cupo'].errors?.['pattern']">Solo se aceptan números</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field-row">
+            <mat-label>Horario</mat-label>
+            <input matInput formControlName="horario" placeholder="Horario">
+            <mat-error *ngIf="editForm.controls['horario'].errors?.['required']">Campo requerido</mat-error>
+            <mat-error *ngIf="editForm.controls['horario'].errors?.['pattern']">Solo se aceptan números</mat-error>
+        </mat-form-field>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close="">Cerrar</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="editForm.invalid">Guardar</button>
+    </mat-dialog-actions>
+</form>

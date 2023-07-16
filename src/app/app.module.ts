@@ -8,10 +8,13 @@ import { AppComponent } from './app.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { MainContainerModule } from './main-container/main-container.module';
 import { EstudiantesModule } from './estudiantes/estudiantes.module';
+import { CursosModule } from './cursos/cursos.module';
+import { InscripcionModule } from './inscripcion/inscripcion.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,9 @@ import { EstudiantesModule } from './estudiantes/estudiantes.module';
     HttpClientModule,
     UsuariosModule,
     MainContainerModule,
-    EstudiantesModule
+    EstudiantesModule,
+    CursosModule,
+    InscripcionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

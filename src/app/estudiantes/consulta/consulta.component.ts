@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { RegistroComponent } from '../registro/registro.component';
 import { EditarComponent } from '../editar/editar.component';
+import { VerComponent } from '../ver/ver.component';
 
 @Component({
   selector: 'app-consulta',
